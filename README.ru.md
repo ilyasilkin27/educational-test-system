@@ -1,4 +1,4 @@
-[README.ru.md](./README.ru.md)
+[![Ru Version](https://img.shields.io/badge/Ru-README-red)](README.ru.md)
 
 # Educational Test System
 
