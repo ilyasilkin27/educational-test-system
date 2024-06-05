@@ -5,6 +5,7 @@ interface TestState {
   questions: Question[];
   answers: Record<string, any>;
   progress: number;
+  result: string;
 }
 
 const initialState: TestState = {
@@ -19,7 +20,7 @@ const initialState: TestState = {
     {
       id: 'q2',
       type: 'short-answer',
-      text: 'What is your name?'
+      text: 'What data type is this: []'
     } as ShortAnswerQuestion,
     {
       id: 'q3',
@@ -29,6 +30,7 @@ const initialState: TestState = {
   ],
   answers: {},
   progress: 0,
+  result: ''
 };
 
 const testSlice = createSlice({
@@ -40,8 +42,21 @@ const testSlice = createSlice({
       state.progress = Math.round((Object.keys(state.answers).length / state.questions.length) * 100);
     },
     submitTest: (state) => {
-      // Handle test submission logic
-      console.log('Test submitted', state.answers);
+      // Проверка ответов и вывод результата
+      let correctAnswers = 0;
+      state.questions.forEach(question => {
+        const userAnswer = state.answers[question.id];
+        if (question.type === 'multiple-choice' && (question as MultipleChoiceQuestion).multiple) {
+          if (JSON.stringify(userAnswer) === JSON.stringify(['HTML', 'CSS', 'JavaScript'])) {
+            correctAnswers++;
+          }
+        } else if (question.type === 'short-answer' && userAnswer.toLowerCase() === 'array') {
+          correctAnswers++;
+        } else if (question.type === 'long-answer' && userAnswer !== '') {
+          correctAnswers++;
+        }
+      });
+      state.result = `You got ${correctAnswers} out of ${state.questions.length} correct`;
     },
   },
 });
