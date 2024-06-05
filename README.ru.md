@@ -1,5 +1,3 @@
-[![Ru Version](https://img.shields.io/badge/Ru-README-red)](README.ru.md)
-
 # Educational Test System
 
 Это образовательная тестовая система, созданная с использованием React и TypeScript. Он позволяет пользователям проходить тесты, сохранять прогресс и динамически регистрировать новые типы вопросов.
