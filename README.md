@@ -24,7 +24,7 @@ This is an educational test system built with React and TypeScript. It allows us
 
 1. Clone the repository:
     ```sh
-    git clone
+    git clone git@github.com:ilyasilkin27/educational-test-system.git
     cd educational-test-system
     ```
 

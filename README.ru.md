@@ -1,3 +1,5 @@
+[README.ru.md](./README.ru.md)
+
 # Educational Test System
 
 Это образовательная тестовая система, созданная с использованием React и TypeScript. Он позволяет пользователям проходить тесты, сохранять прогресс и динамически регистрировать новые типы вопросов.
@@ -24,7 +26,7 @@
 
 1. Клонируйте репозиторий:
     ```sh
-    git clone
+    git clone git@github.com:ilyasilkin27/educational-test-system.git
     cd educational-test-system
     ```
 
